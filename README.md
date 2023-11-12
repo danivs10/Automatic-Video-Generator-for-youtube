@@ -16,7 +16,7 @@ Automate the publication of YouTube videos or shorts with this open-source scrip
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-repo.git
+    git clone https://github.com/danivs10/Automatic-Video-Generator-for-youtube
     cd your-repo
     ```
 
