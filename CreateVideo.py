@@ -16,10 +16,10 @@ def add_captions(texts):
 
     tm=0
 
-    audio_clips = [
-        AudioFileClip(f"audio/audio{i}.mp3")
-        for i in range(3)
-    ]
+    audio_clips = []
+    for i in range(3):
+        audioFileName = "audio/audio"+str(i)+".mp3"
+        audio_clips.append(AudioFileClip(audioFileName))
 
     for i, audio in enumerate(audio_clips):
         caption = mp.TextClip(texts[i], fontsize=70, color='white', stroke_width=2, stroke_color='black', method='label', font='Nimbus-Sans-L-Bold')
