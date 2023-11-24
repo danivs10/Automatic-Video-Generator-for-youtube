@@ -2,6 +2,7 @@ import random
 import moviepy.editor as mp
 from moviepy.audio.AudioClip import concatenate_audioclips, CompositeAudioClip
 from moviepy.audio.io.AudioFileClip import AudioFileClip
+import os
 
 #texts = ["FACT 1 ABOUT PSICOLOGY", "FACT 2 ABOUT PSICOLOGY", "FACT 3 ABOUT PSICOLOGY"]
 texts=['1. Psicology is the science of the mind and behavior, exploring how our experiences shape our thoughts, feelings, and behaviors. \n2. It looks at how our biology, environment, and culture shape our mental and emotional states. \n3. Psicology can help us understand ourselves and others']
@@ -17,8 +18,10 @@ def add_captions(texts):
     tm=0
 
     audio_clips = []
-    for i in range(3):
-        audioFileName = "audio/audio"+str(i)+".mp3"
+    audio_folder = "audios"
+    audio_files = [f for f in os.listdir(audio_folder)]
+    for audio_file in audio_files:
+        audioFileName = os.path.join(audio_folder, audio_file)
         audio_clips.append(AudioFileClip(audioFileName))
 
     for i, audio in enumerate(audio_clips):
