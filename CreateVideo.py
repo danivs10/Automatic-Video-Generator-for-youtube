@@ -5,7 +5,7 @@ from moviepy.audio.io.AudioFileClip import AudioFileClip
 import os
 
 #texts = ["FACT 1 ABOUT PSICOLOGY", "FACT 2 ABOUT PSICOLOGY", "FACT 3 ABOUT PSICOLOGY"]
-texts=['1. Psicology is the science of the mind and behavior, exploring how our experiences shape our thoughts, feelings, and behaviors. \n2. It looks at how our biology, environment, and culture shape our mental and emotional states. \n3. Psicology can help us understand ourselves and others']
+texts=['1. Psicology is the science of the mind and behavior, exploring how our experiences shape our thoughts, feelings, and behaviors.', '2. It looks at how our biology, environment, and culture shape our mental and emotional states.', '3. Psicology can help us understand ourselves and others']
 
 def add_captions(texts):
     video = mp.VideoFileClip("./background/test.mp4")
@@ -18,7 +18,7 @@ def add_captions(texts):
     tm=0
 
     audio_clips = []
-    audio_folder = "audios"
+    audio_folder = "audio"
     audio_files = [f for f in os.listdir(audio_folder)]
     for audio_file in audio_files:
         audioFileName = os.path.join(audio_folder, audio_file)
@@ -36,4 +36,4 @@ def add_captions(texts):
     video = video.set_duration(tm)
     video.write_videofile("output.mp4")
 
-#add_captions(texts)
+add_captions(texts)
